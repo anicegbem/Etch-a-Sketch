@@ -1,0 +1,55 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+#container {
+    position: absolute;
+    right: 2em;
+    top: 2em;
+    display: flex;
+    border: 1px solid black;
+    width: 32em;
+    height: 32em;
+    
+    
+    
+    
+}
+
+.inner {
+   /* float: left; */
+   width: 2em;
+   height: 2em;
+   margin: 0;
+   padding: 0;
+   border: 1px solid #404040;
+}
+
+@media (max-width: 750px) {
+    #container {
+        width: 8em;
+        height: 8em;
+    }
+
+    .inner {
+        width: 0.5em;
+        height: 0.5em;
+    }
+}
+
+@media (max-width: 960px) {
+    #container {
+        width: 16em;
+        height: 16em;
+    }
+
+    .inner {
+        width: 1em;
+        height: 1em;
+    }
+
+}
