@@ -26,7 +26,7 @@ html {
    height: 2em;
    margin: 0;
    padding: 0;
-   border: 1px solid #404040;
+   border: 0.25px solid #404040;
 }
 
 @media (max-width: 750px) {
