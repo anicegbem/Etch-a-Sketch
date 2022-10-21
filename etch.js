@@ -1,4 +1,6 @@
 let container = document.getElementById("container");
+let main = document.getElementById("main");
+let button = document.getElementById("button");
 
 
 for(let i = 1; i <= 16; i++) {
