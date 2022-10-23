@@ -10,14 +10,18 @@ html {
     /*position: absolute;
     right: 2em;
     top: 2em;*/
-    display: flex;
-    border: 1px solid black;
+    /* display: flex; */
+    border: 1px solid black; 
     width: 32em;
     height: 32em;
     
     
     
     
+}
+
+#main {
+    display: flex;
 }
 
 .inner {
@@ -27,6 +31,11 @@ html {
    margin: 0;
    padding: 0;
    border: 0.25px solid #404040;
+}
+
+.newinner {
+    border: 0.25px solid #404040;
+
 }
 
 @media (max-width: 750px) {
