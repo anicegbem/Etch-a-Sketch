@@ -2,6 +2,8 @@ let container = document.getElementById("container");
 let main = document.getElementById("main");
 let button = document.querySelector("button");
 let size = 0;
+let cells = document.getElementsByClassName("inner");
+
 
 function getGrid() {
     for(let i = 1; i <= 16; i++) {
@@ -19,6 +21,7 @@ function getGrid() {
         
     };
     getNewGrid();
+    applyColor();
     
 
     
@@ -31,18 +34,6 @@ let outer = document.getElementsByClassName('outer');
 let inner = document.getElementsByClassName('inner');
 
 
-let cells = document.getElementsByClassName("inner");
-let content = Array.from(cells);
-
-content.forEach(cell => {
-    cell.addEventListener('mouseover', function putPaint() {
-        cell.style.backgroundColor = "red";
-    });
-    /*cell.addEventListener('mouseout', function removePaint() {
-        cell.style.backgroundColor = "transparent";
-    })*/
-});
-
 function getNewGrid() {
     button.addEventListener('click', function createGrid() {
         main.innerHTML = '';
@@ -53,11 +44,6 @@ function getNewGrid() {
         for(let i = 1; i <= size; i++) {
             let newbox = document.createElement('div');    
             newbox.setAttribute('class', 'newouter');
-            // main.replaceChildren(newbox);
-            /*for(let item of oldbox) {
-                main.removeChild(item);
-
-            }*/
             let i = size;
             while(i <= size) {
                 main.appendChild(newbox);
@@ -65,11 +51,11 @@ function getNewGrid() {
             }
             
             for(let i = 1; i <= size; i++) {
-                let newinner = document.createElement('div');
-                newinner.setAttribute('class', 'newinner')
-                newinner.style.width = `${width}em`;
-                newinner.style.height = `${height}em`;
-                newbox.appendChild(newinner);
+                let inner = document.createElement('div');
+                inner.setAttribute('class', 'inner')
+                inner.style.width = `${width}em`;
+                inner.style.height = `${height}em`;
+                newbox.appendChild(inner);
             } 
             
                 
@@ -80,11 +66,25 @@ function getNewGrid() {
 
         }   
         
-            
+        applyColor();      
         
     });
     
-}
+    
+};
+
+
+
+function applyColor() {
+    for (let cell of cells) {
+        cell.addEventListener('mouseover', function putPaint() {
+            cell.style.backgroundColor = "red";
+        })
+    }
+    
+
+};
+
 getGrid();
 
 
