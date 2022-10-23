@@ -37,34 +37,35 @@ let inner = document.getElementsByClassName('inner');
 function getNewGrid() {
     button.addEventListener('click', function createGrid() {
         main.innerHTML = '';
-        let input = prompt("Enter a number from 1 - 64");
+        let input = prompt("ENTER A NUMBER LESS THAN OR EQUAL TO 100");
         size = input;
         let width = 32 / size;
         let height = 32 / size;
-        for(let i = 1; i <= size; i++) {
-            let newbox = document.createElement('div');    
-            newbox.setAttribute('class', 'newouter');
-            let i = size;
-            while(i <= size) {
-                main.appendChild(newbox);
-                i++;
-            }
-            
+        if (size <= 100) {
             for(let i = 1; i <= size; i++) {
-                let inner = document.createElement('div');
-                inner.setAttribute('class', 'inner')
-                inner.style.width = `${width}em`;
-                inner.style.height = `${height}em`;
-                newbox.appendChild(inner);
-            } 
-            
+                let newbox = document.createElement('div');    
+                newbox.setAttribute('class', 'newouter');
+                let i = 1;
+                while(i <= size) {
+                    main.appendChild(newbox);
+                    i++;
+                }
                 
+                for(let i = 1; i <= size; i++) {
+                    let inner = document.createElement('div');
+                    inner.setAttribute('class', 'inner')
+                    inner.style.width = `${width}em`;
+                    inner.style.height = `${height}em`;
+                    newbox.appendChild(inner);
+                } 
+    
+            }   
 
-            
-            
-            
-
-        }   
+        }
+        else {
+            main.innerText = "Please, enter a number less than or equal to 100"
+        }
+        
         
         applyColor();      
         
