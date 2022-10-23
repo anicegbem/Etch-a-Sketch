@@ -48,8 +48,8 @@ function getNewGrid() {
         main.innerHTML = '';
         let input = prompt("Enter a number from 1 - 64");
         size = input;
-        let width = 512 / size;
-        let height = 512 / size;
+        let width = 32 / size;
+        let height = 32 / size;
         for(let i = 1; i <= size; i++) {
             let newbox = document.createElement('div');    
             newbox.setAttribute('class', 'newouter');
@@ -67,8 +67,8 @@ function getNewGrid() {
             for(let i = 1; i <= size; i++) {
                 let newinner = document.createElement('div');
                 newinner.setAttribute('class', 'newinner')
-                newinner.style.width = `${width}px`;
-                newinner.style.height = `${height}px`;
+                newinner.style.width = `${width}em`;
+                newinner.style.height = `${height}em`;
                 newbox.appendChild(newinner);
             } 
             
