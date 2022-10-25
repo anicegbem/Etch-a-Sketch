@@ -6,6 +6,15 @@ html {
     box-sizing: inherit;
 }
 
+body {
+    background-color: pink;
+}
+
+h1 {
+    text-align: center;
+    
+}
+
 #container {
     /*position: absolute;
     right: 2em;
@@ -14,14 +23,13 @@ html {
     /* border: 1px solid black;  */
     width: 32em;
     height: 32em;
-    
-    
-    
+    margin: 0 auto;    
     
 }
 
 #main {
     display: flex;
+    background-color: #fff;
 }
 
 .inner {
@@ -36,6 +44,13 @@ html {
 .newinner {
     border: 0.25px solid #404040;
 
+}
+
+button {
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 20em; */
+    
 }
 
 @media (max-width: 750px) {

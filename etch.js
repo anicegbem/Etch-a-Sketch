@@ -79,7 +79,7 @@ function getNewGrid() {
 function applyColor() {
     for (let cell of cells) {
         cell.addEventListener('mouseover', function putPaint() {
-            cell.style.backgroundColor = "red";
+            cell.style.backgroundColor = "black";
         })
     }
     
