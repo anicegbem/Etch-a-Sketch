@@ -66,7 +66,7 @@ function getNewGrid() {
 
         }
         else {
-            alert("Please, enter a number less than or equal to 100");
+            alert("Please enter a number less than or equal to 100");
         }
         
         
@@ -100,15 +100,16 @@ function removeColor() {
 };
 
 function getRGB() {
-    let i, j, k = 0;
-    i = Math.floor(Math.random() * 255);
-    j = Math.floor(Math.random() * 255);
-    k = Math.floor(Math.random() * 255);
+    
     rgb.addEventListener('click', function selectColor() {
         for (let item of cells) {
+            let i, j, k = 0;
+            i = Math.floor(Math.random() * 255);
+            j = Math.floor(Math.random() * 255);
+            k = Math.floor(Math.random() * 255);
             item.addEventListener('mouseover', function getRainbow(){
                 item.style.backgroundColor = `rgb(${i}, ${j}, ${k})`;
-            })
+            });
         }
     });
     
