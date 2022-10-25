@@ -1,8 +1,11 @@
 let container = document.getElementById("container");
 let main = document.getElementById("main");
 let button = document.querySelector("button");
+let clear = document.getElementById("clear");
+let rgb = document.getElementById("rgb");
 let size = 0;
 let cells = document.getElementsByClassName("inner");
+
 
 
 function getGrid() {
@@ -20,28 +23,28 @@ function getGrid() {
         
         
     };
+    getRGB();
     getNewGrid();
     applyColor();
+    removeColor();
+    
     
 
     
 
     
 
-}
-
-let outer = document.getElementsByClassName('outer');
-let inner = document.getElementsByClassName('inner');
+};
 
 
 function getNewGrid() {
     button.addEventListener('click', function createGrid() {
-        main.innerHTML = '';
         let input = prompt("ENTER A NUMBER LESS THAN OR EQUAL TO 100");
         size = input;
         let width = 32 / size;
         let height = 32 / size;
-        if (size <= 100) {
+        if (size <= 100 && size) {
+            main.innerHTML = '';
             for(let i = 1; i <= size; i++) {
                 let newbox = document.createElement('div');    
                 newbox.setAttribute('class', 'newouter');
@@ -63,11 +66,12 @@ function getNewGrid() {
 
         }
         else {
-            main.innerText = "Please, enter a number less than or equal to 100"
+            alert("Please, enter a number less than or equal to 100");
         }
         
         
-        applyColor();      
+        applyColor(); 
+        getRGB();     
         
     });
     
@@ -82,6 +86,31 @@ function applyColor() {
             cell.style.backgroundColor = "black";
         })
     }
+    
+
+};
+
+function removeColor() {
+    clear.addEventListener('click', function takeColor() {
+        for(let cell of cells) {
+            cell.style.backgroundColor = "";
+        }
+
+    })
+};
+
+function getRGB() {
+    let i, j, k = 0;
+    i = Math.floor(Math.random() * 255);
+    j = Math.floor(Math.random() * 255);
+    k = Math.floor(Math.random() * 255);
+    rgb.addEventListener('click', function selectColor() {
+        for (let item of cells) {
+            item.addEventListener('mouseover', function getRainbow(){
+                item.style.backgroundColor = `rgb(${i}, ${j}, ${k})`;
+            })
+        }
+    });
     
 
 };
