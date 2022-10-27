@@ -5,6 +5,7 @@ let clear = document.getElementById("clear");
 let rgb = document.getElementById("rgb");
 let size = 0;
 let cells = document.getElementsByClassName("inner");
+let color = document.querySelector("input");
 
 
 
@@ -27,6 +28,7 @@ function getGrid() {
     getNewGrid();
     applyColor();
     removeColor();
+    changeColor();
     
     
 
@@ -66,11 +68,11 @@ function getNewGrid() {
 
         }
         else {
-            alert("Please enter a number less than or equal to 100");
+            alert("PLEASE ENTER A NUMBER LESS THAN OR EQUAL TO 100");
         }
         
         
-        applyColor(); 
+        applyNewColor();
         getRGB();     
         
     });
@@ -84,7 +86,7 @@ function applyColor() {
     for (let cell of cells) {
         cell.addEventListener('mouseover', function putPaint() {
             cell.style.backgroundColor = "black";
-        })
+        });
     }
     
 
@@ -114,6 +116,30 @@ function getRGB() {
     });
     
 
+};
+
+function changeColor() {
+    color.addEventListener('input', function getChanges() {
+        let newcolor = document.getElementById('change').value;
+        for(let cell of cells) {
+            cell.addEventListener('mouseover', function getNewChanges() {
+                cell.style.backgroundColor = newcolor;
+            });
+        }
+
+        
+
+    });
+};
+
+function applyNewColor() {
+    let choice = document.getElementById('change').value;
+    for(let cell of cells) {
+        cell.addEventListener('mouseover', function applyChoice(){
+            cell.style.backgroundColor = choice;
+        })
+
+    }
 };
 
 getGrid();

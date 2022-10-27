@@ -43,9 +43,15 @@ h1 {
 
 
 button {
+    /* add cursor pointer for hover */
+    padding: 0.5em;
     /* position: absolute; */
     /* top: 0; */
     /* left: 20em; */
+    
+}
+
+#colour {
     
 }
 
