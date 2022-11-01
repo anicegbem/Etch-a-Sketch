@@ -31,6 +31,7 @@ function getGrid() {
     changeColor();
     
     
+    
 
     
 
@@ -64,7 +65,8 @@ function getNewGrid() {
                     newbox.appendChild(inner);
                 } 
     
-            }   
+            }  
+            resizeGrid();  
 
         }
         else {
@@ -73,7 +75,8 @@ function getNewGrid() {
         
         
         applyNewColor();
-        getRGB();     
+        getRGB(); 
+           
         
     });
     
@@ -142,7 +145,44 @@ function applyNewColor() {
     }
 };
 
+
+function resizeGrid() {
+    let clientWidth = document.documentElement.clientWidth;
+    let clientHeight = document.documentElement.clientHeight;
+    if(clientWidth <= 960 && clientHeight <= 960) {
+       container.style.width = `${16}em`
+       container.style.height = `${16}em`
+       let newWidth = 16 / size;
+       let newheight = 16 / size;
+       let inner = document.getElementsByClassName('inner');
+       for (let item of inner) {
+           item.style.width = `${newWidth}em`;
+           item.style.height = `${newheight}em`;
+            
+        }
+        console.log(newWidth);
+       
+    }
+    if(clientWidth <= 750 && clientHeight <= 750) {
+       container.style.width = `${8}em`
+       container.style.height = `${8}em`
+       let newWidth = 8 / size;
+       let newheight = 18 / size;
+       let inner = document.getElementsByClassName('inner');
+       for (let item of inner) {
+           item.style.width = `${newWidth}em`;
+           item.style.height = `${newheight}em`;
+            
+        }
+       
+    }
+    
+    
+
+}
+
 getGrid();
+
 
 
 
